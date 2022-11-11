@@ -903,6 +903,7 @@ section {
     .header-body, .slider-body, .price-body, .checklist-body, .about-body, .footer-body {
         padding: 0 8px;
     }
+
     .slider-item {
         padding: 15px;
     }
@@ -921,6 +922,7 @@ section {
     }
     .footer-social {
         background: #63929D;
+        right: -8px;
     }
     .footer-social {
         top: 0;
