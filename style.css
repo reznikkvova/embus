@@ -255,7 +255,7 @@ section.section {
     color: #FFFFFF;
 }
 
-.checklist-body > h2.section-title, .about-body > h2.section-title {
+.checklist-body > h2.section-title, .about-body > h2.section-title, .service-body > h2.section-title {
     color: #000;
 }
 
@@ -283,12 +283,16 @@ section.section {
 }
 .section-text, .section-list_title {
     font-family: 'Quicksand', sans-serif;
-    font-style: normal;
+    font-style: italic;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
     letter-spacing: 0.02em;
     color: #000000;
+}
+p.section-text {
+    display: inline;
+    padding-left: 25px;
 }
 .section-list_title {
     margin: 15px 0 10px;
@@ -299,6 +303,19 @@ section.section {
 }
 .checklist-image img {
     width: 100%;
+}
+
+.show-all {
+    text-align: right;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 16x;
+    margin-top: 15px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    color: #63929D;
+    cursor: pointer;
+    display: none;
 }
 
 .section-list {
@@ -327,7 +344,7 @@ section.section {
     top: 8px;
     width: 8px;
     height: 8px;
-    background: #63929D;
+    background: white;
     border-radius: 4px;
 }
 
@@ -453,7 +470,7 @@ section {
         max-width: 100%;
         margin: 0 auto;
     }
-    .header-body, .slider-body, .price-body, .checklist-body, .about-body, .footer-body {
+    .header-body, .slider-body, .price-body, .checklist-body, .about-body, .footer-body, .service-body {
         padding: 0 16px;
     }
     .header-logo > h1, .footer-logo > div {
@@ -623,11 +640,9 @@ section {
         padding-right: 15px;
         font-weight: 400;
     }
-    .section.about {
-        padding-bottom: 0 !important;
-    }
+
     .section.contact {
-        padding: 0 !important;
+        padding: 20px 0 0 !important;
     }
 }
 @media(max-width: 900px){
@@ -900,8 +915,27 @@ section {
 }
 
 @media(max-width: 425px) {
-    .header-body, .slider-body, .price-body, .checklist-body, .about-body, .footer-body {
+    .header-body, .slider-body, .price-body, .checklist-body, .about-body, .footer-body, .service-body {
         padding: 0 8px;
+    }
+    .show-all {
+        display: block;
+    }
+
+    .text-wrapper {
+        max-height: 130px;
+        overflow: hidden;
+        position: relative;
+    }
+    .text-wrapper:before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 25px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), #fff);
+        content: "";
     }
 
     .slider-item {
@@ -915,7 +949,7 @@ section {
     }
     .section.checklist {
         margin-bottom: 0;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
     .footer-social::before {
         display: none;
@@ -955,4 +989,14 @@ section {
         width: 60px;
 
     }
+}
+html {
+    scroll-padding-top: 70px;
+}
+
+.section.service {
+    background: #63929D;
+}
+.section.service h2, .section.service .section-list_item, .section.service .section-list_title {
+    color: white !important;
 }
