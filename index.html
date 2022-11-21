@@ -1,11 +1,34 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <meta name="author" content="Embus">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- <base href="https://embus.com.ua/">
+    <link rel="alternate" href="https://embus.com.ua/" hreflang="uk">
+    <link rel="canonical" href="https://embus.com.ua/">-->
+
+    <link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>EMBUS</title>
+
+    <title>Вантажні перевезення Чернівці | Мувінг | Переїзд | EMBUS</title>
+
+    <meta name='title' content='Вантажні перевезення Чернівці | Мувінг | Переїзд | EMBUS'>
+    <meta name='description' content='Перша мувінгова компанія в Чернівцях | Надання професійних послуг з організації переїздів, послуги пакування та вантажників | EMBUS - переїзд Чернівці'>
+    <meta name='keywords' content='мувінг,вантажні перевезення,перевезення чернівці,вантажник,переїзд,доставка,транспортування,водій у чернівцях,бус,оренда'>
+    <meta name="robots" content="index,follow">
+
+    <meta property='og:locale' content='uk_UA'>
+    <meta property='og:type' content='article'>
+    <meta property='og:site_name' content='Embus'>
+    <meta property='og:title' content='Вантажні перевезення Чернівці | Мувінг | Переїзд | EMBUS'>
+    <meta property='og:description' content='Перша мувінгова компанія в Чернівцях | Надання професійних послуг з організації переїздів, послуги пакування та вантажників | EMBUS - переїзд Чернівці'>
+    <meta property='og:url' content='https://embus.com.ua/'>
+
+    <meta property='og:image' content='/images/logo.png'>
+
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel="preload" as="font">
     <link rel="stylesheet" type="text/css" href="slick.css"/>
@@ -121,6 +144,73 @@
             </div>
         </div>
     </section>
+    <section class="section calc">
+        <div class="container">
+            <div class="section-body calc-body">
+                <h2 class="section-title">Калькулятор вартості</h2>
+                <div class="calc-wrapper">
+                    <div class="calc-item">
+                        <div class="calc-field movers">
+                            <div class="calc-title">
+                                <span>1</span> Кількість вантажників
+                            </div>
+                            <div class="calc-options">
+                                <div class="mover" data-mover="1">
+                                    1
+                                </div>
+                                <div class="mover" data-mover="2">
+                                    2
+                                </div>
+                                <div class="mover active" data-mover="0">
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc-field input">
+                            <div class="calc-title">
+                                <span>2</span> Введіть тип вантажу
+                            </div>
+                            <label class="calc-options" for="type">
+                                <input type="text" id="type" name="type" placeholder="Тип вантажу" class="input-calc">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="calc-item">
+                        <div class="calc-field input">
+                            <div class="calc-title">
+                                <span>3</span> Дальність поїздки (км)
+                            </div>
+                            <label class="calc-options" for="range">
+                                <input type="number" id="range" name="range" placeholder="Дальність поїздки" class="input-calc">
+                            </label>
+                        </div>
+                        <div class="calc-field input">
+                            <div class="calc-title">
+                                <span>4</span> Час експлуатації (год)
+                            </div>
+                            <label class="calc-options" for="time">
+                                <input type="number" id="time" name="time" placeholder="Час експлуатації" class="input-calc">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="calc-item">
+                        <div class="calc-title">
+                            <span>=</span> Вартість перевезення
+                        </div>
+                        <div class="calc-img-wrapper">
+                            <div class="calc-result-description">* Орієнтовна вартість</div>
+                            <div class="image-wrapper">
+                                <div id="result"></div>
+                                <img src="img/calc.png" alt="calc" class="calc-img">
+
+                            </div>
+                            <img src="img/small.png" alt="small icon" class="bus-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section checklist" id="checklist">
         <div class="container">
             <div class="section-body checklist-body">
@@ -153,7 +243,8 @@
                             <div>500</div>
                         </div>
                         <div class="price-list_description">
-                            Перевезення <br> до 5 км
+                            Перевезення <br class="br"> до 5 км
+                            <br>1 година
                         </div>
                     </div>
                     <div class="price-list_item">
@@ -162,7 +253,8 @@
                             <div>650</div>
                         </div>
                         <div class="price-list_description">
-                            Перевезення <br> до 10 км
+                            Перевезення <br class="br"> до 10 км
+                            <br>1 година
                         </div>
                     </div>
                     <div class="price-list_item">
@@ -171,7 +263,18 @@
                             <div>200</div>
                         </div>
                         <div class="price-list_description">
-                            Вантажник за <br> годину праці
+                            Вантажник за <br>
+                            1 годину праці
+                        </div>
+                    </div>
+                    <div class="price-list_item mobile-only">
+                        <img src="img/time.png" alt="time">
+                        <div class="price-list_circle">
+                            <div>200</div>
+                        </div>
+                        <div class="price-list_description">
+                            Надлишковий час <br>
+                            30 хвилин
                         </div>
                     </div>
                     <div class="price-list_item">
@@ -219,9 +322,81 @@
             </div>
         </div>
     </section>
+
+    <section class="section packing">
+        <div class="container">
+            <div class="section-body packing-body">
+                <h2 class="section-title">Пакування</h2>
+                <div class="packing-wrapper">
+                    <div class="packing-item">
+                        <div class="packing-image">
+                            <img src="img/box_big.png" alt="box big">
+                        </div>
+                        <div class="packing-description">
+                            Бокс (стандарт)
+                            <br>
+                            <span>45грн / шт</span>
+                        </div>
+                    </div>
+                    <div class="packing-item">
+                        <div class="packing-image">
+                            <img src="img/box-small.png" alt="box small">
+                        </div>
+                        <div class="packing-description">
+                            Бокс (великий)
+                            <br>
+                            <span>60грн / шт</span>
+                        </div>
+                    </div>
+
+                    <div class="packing-item">
+                        <div class="packing-image">
+                            <img src="img/skotch.png" alt="skotch">
+                        </div>
+                        <div class="packing-description">
+                            Скотч
+                            <br>
+                           <span>60грн / 70м</span>
+                        </div>
+                    </div>
+                    <div class="packing-item">
+                        <div class="packing-image">
+                            <img src="img/poop.png" alt="poop">
+                        </div>
+                        <div class="packing-description">
+                            Пупирчата плівка
+                            <br>
+                            <span>25грн / м2</span>
+                        </div>
+                    </div>
+                    <div class="packing-item">
+                        <div class="packing-image">
+                            <img src="img/stratch.png" alt="poop">
+                        </div>
+                        <div class="packing-description">
+                            Стретч плівка
+                            <br>
+                            <span>250грн / 300м</span>
+                        </div>
+                    </div>
+                    <div class="packing-item">
+                        <div class="packing-image">
+                            <img src="img/paket.png" alt="poop">
+                        </div>
+                        <div class="packing-description">
+                            Пакет 120л
+                            <br>
+                           <span>10грн / шт</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class=" section contact">
         <div class="container">
-            <div class="contact-body">
+            <div class="contact-body section-body">
+                <h2 class="section-title">Зв'язок у месенджерах</h2>
                 <img src="img/contact.png" alt="contact image" class="desktop-image">
                 <img src="img/contact-mob.png" alt="contact image" class="mobile-image">
                 <div class="contact-social">
@@ -246,10 +421,10 @@
                     <div>EMBUS</div>
                 </div>
                 <div class="footer-social">
-                    <a class="footer-social_item" href="">
+                    <a class="footer-social_item" href="https://www.instagram.com/embus.ua/" target="_blank">
                         <img src="img/int.png" alt="instagram">
                     </a>
-                    <a class="footer-social_item" href="">
+                    <a class="footer-social_item" target="_blank" href="https://www.facebook.com/profile.php?id=100087432715691">
                         <img src="img/fb.png" alt="b">
                     </a>
                 </div>

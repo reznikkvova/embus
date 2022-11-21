@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+
+User-agent: Googlebot
+Allow: /
+
+Host: https://embus.com.ua
+Sitemap: https://embus.com.ua/sitemap.xml

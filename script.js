@@ -6,6 +6,26 @@ window.addEventListener('DOMContentLoaded', () => {
         autoplay: true,
         autoplaySpeed: 2500,
     });
+    $('.packing-wrapper').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: true,
+        speed: 800,
+        responsive: [{
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 3,
+            }
+        },{
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+            }
+        }],
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2500,
+    });
     const burger = document.querySelector('.header-burger');
     burger.addEventListener('click', () => {
         burger.classList.toggle('active');
@@ -53,4 +73,69 @@ window.addEventListener('DOMContentLoaded', () => {
             btn.remove();
         });
     }
+
+
+    function calc() {
+        let moversCount = 0;
+        let lengthKm = 0;
+        let usingTime = 0;
+
+        document.querySelectorAll('[data-mover]').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelector('[data-mover].active').classList.remove('active');
+                item.classList.add('active');
+                moversCount = Number(item.dataset.mover);
+                if(usingTime !== 0 && lengthKm !== 0) {
+                    getPrice(moversCount, lengthKm, usingTime);
+                } else {
+                    document.getElementById('result').innerHTML = '';
+                }
+            });
+        })
+
+        document.getElementById('range').addEventListener('input', (e) => {
+            const value = e.target.value
+            if(e.target.value !== '') {
+                lengthKm = Number(value);
+            } else {
+                lengthKm = 0
+            }
+            if(usingTime !== 0 && lengthKm !== 0) {
+                getPrice(moversCount, lengthKm, usingTime);
+            } else {
+                document.getElementById('result').innerHTML = '';
+            }
+        });
+        document.getElementById('time').addEventListener('input', (e) => {
+            const value = e.target.value
+            if(e.target.value !== '') {
+                usingTime = Number(value);
+            } else {
+                usingTime = 0;
+            }
+
+            if(usingTime !== 0 && lengthKm !== 0) {
+                getPrice(moversCount, lengthKm, usingTime);
+            } else {
+                document.getElementById('result').innerHTML = '';
+            }
+
+        })
+
+        function getPrice(movers, km, time) {
+            let result;
+            if(km >= 10 && km <= 50) {
+                result = ((km * 30) + ((movers*time)*200) + 500);
+            } else if(km >= 0 && km <= 5){
+                result = 500 + ((movers*time)*200);
+            } else if(km > 5 && km < 10){
+                result = 650 + ((movers*time)*200);
+            } else {
+                result = (km * 30);
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+
+    }
+    calc();
 });
