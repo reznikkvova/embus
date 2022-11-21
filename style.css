@@ -791,7 +791,7 @@ section {
         width: 100%;
     }
     .contact-social {
-        top: 50%;
+        top: 55%;
         transform: translate(-50%, -50%)
     }
     .contact-social_item {
