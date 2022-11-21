@@ -124,12 +124,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
         function getPrice(movers, km, time) {
             let result;
-            if(km >= 10 && km <= 50) {
+            if(km >= 10 && km <= 60) {
                 result = ((km * 30) + ((movers*time)*200) + 500);
             } else if(km >= 0 && km <= 5){
-                result = 500 + ((movers*time)*200);
+                result = 500 + ((movers*time)*200) + ((time > 1 ? time - 1 : 0) * 400);
             } else if(km > 5 && km < 10){
-                result = 650 + ((movers*time)*200);
+                result = 650 + ((movers*time)*200) + ((time > 1 ? time - 1 : 0) * 400);
             } else {
                 result = (km * 30);
             }
