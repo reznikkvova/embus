@@ -456,6 +456,90 @@ footer.footer {
     justify-content: center;
 }
 
+.modal, .modal-success {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #e3e3e3db;
+    z-index: 5;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal.active, .modal-success.active {
+    display: flex;
+}
+
+.modal-content, .modal-success-content {
+    width: 500px;
+    height: 400px;
+    background: #63929D;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.modal-title {
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    max-width: 80%;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-bottom: 35px;
+}
+.modal-label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.modal-label > input:active, .modal-label > input:hover, .modal-label > input:focus, .modal-send:active, .modal-send:hover, .modal-send:focus, .modal-close:active, .modal-close:hover, .modal-close:focus {
+    outline: none;
+}
+
+.modal-label > input {
+    outline: none;
+    width: 80%;
+    height: 50px;
+    border: 3px solid #3d7886;
+    border-radius: 25px;
+    padding: 0 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    color: #63929D;
+}
+
+.modal-send, .modal-close {
+    background: #FFF;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 26px;
+    letter-spacing: 0.02em;
+    color: #63929D;
+    min-width: 220px;
+    text-align: center;
+    margin-top: 30px;
+}
+
 .header-burger {
     display: none;
 }
@@ -528,6 +612,10 @@ section {
 
     .contact-social {
         top: 30%;
+    }
+    .modal-content, .modal-success-content {
+        width: 80%;
+        height: fit-content;
     }
     .section-body h2.section-title {
         margin-bottom: 20px;
@@ -853,6 +941,12 @@ section {
 }
 
 @media(max-width: 550px) {
+    .modal-label > input {
+        width: 100%;
+    }
+    .modal-title {
+        max-width: 90%;
+    }
     .header-phone {
         font-size: 0;
         display: flex;
@@ -933,6 +1027,10 @@ section {
 @media(max-width: 425px) {
     .header-body, .slider-body, .price-body, .checklist-body, .about-body, .footer-body, .service-body, .packing-body, .calc-body, .contact-body {
         padding: 0 8px;
+    }
+    .modal-content, .modal-success-content {
+        width: 85%;
+        height: fit-content;
     }
     .show-all {
         display: block;
@@ -1114,6 +1212,16 @@ html {
     align-items: center;
     margin-bottom: 20px;
 }
+.calc-title.button {
+    padding: 10px 18px;
+    background: white;
+    width: fit-content;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #63929D;
+    font-weight: 700;
+    border: 3px solid #3d7886;
+}
 .calc-title > span {
     font-weight: 700;
     font-size: 40px;
@@ -1184,7 +1292,7 @@ html {
 .input-calc:focus, input-calc:active {
     outline: none;
 }
-.input-calc::placeholder {
+.input-calc::placeholder, .modal-label > input::placeholder {
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -1250,6 +1358,10 @@ html {
         bottom: -13px;
 
     }
+    .calc-title.button {
+        order: 1;
+        margin: 30px auto 15px;
+    }
 
     .calc-wrapper {
         flex-direction: column;
@@ -1287,4 +1399,12 @@ html {
     .mover {
         width: 80px;
     }
+    .calc-title.button {
+        padding: 10px 12px;
+        font-size: 18px;
+    }
+}
+
+.modal-close {
+    margin-top: 0;
 }
